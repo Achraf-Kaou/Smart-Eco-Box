@@ -1,0 +1,1 @@
+# Configurations (Broker URL, Port, Topics, Thresholds)

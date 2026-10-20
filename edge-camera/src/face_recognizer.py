@@ -1,0 +1,1 @@
+# Logique de reconnaissance faciale (MediaPipe / Face Recognition)

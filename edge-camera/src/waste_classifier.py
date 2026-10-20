@@ -1,0 +1,1 @@
+# Logique de détection de déchets (YOLOv8)
