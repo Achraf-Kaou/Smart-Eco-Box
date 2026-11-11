@@ -11,6 +11,11 @@ async function bootstrap() {
   if (mongooseConnection.readyState === 1) {
     console.log('Database verified from main.ts');
   }
+
+  app.enableCors({
+    origin: 'http://localhost:5173', // Vite default port
+    credentials: true,
+  });
   
   await app.listen(process.env.PORT ?? 4020);
 }

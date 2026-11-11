@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import databaseConfig from './config/database.config';
 import { InjectConnection, MongooseModule } from '@nestjs/mongoose';
 import { Connection } from 'mongoose';
+import { MqttModule } from './mqtt/mqtt.module';
+import { DetectionModule } from './detection/detection.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { Connection } from 'mongoose';
     }),
     inject: [ConfigService],
   }),
+    MqttModule,
+    DetectionModule,
   ],
   controllers: [],
   providers: [],
