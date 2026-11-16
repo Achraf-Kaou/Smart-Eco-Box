@@ -1,0 +1,23 @@
+{
+  "name": "Smart Eco-Box",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start:edge-camera": "cd edge-camera && .\\venv\\Scripts\\python.exe main.py",
+    "start:backend": "cd backend && pnpm start",
+    "start:frontend": "cd frontend && pnpm dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.21.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.21.0",
+  "type": "module"
+}
