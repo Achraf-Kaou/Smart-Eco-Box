@@ -99,7 +99,7 @@ def main():
 
     cam = Camera(camera_index=0, width=640, height=480)
     face_recognizer = FaceRecognizer(known_faces_dir="models/known_faces", tolerance=0.5)
-    waste_classifier = WasteClassifier(model_path="yolov8n.pt", conf_threshold=0.45)
+    waste_classifier = WasteClassifier(model_path="yolov8n.pt", conf_threshold=0.35)
 
     mqtt_client = MQTTClient(on_command=handle_command)
     mqtt_client.connect()

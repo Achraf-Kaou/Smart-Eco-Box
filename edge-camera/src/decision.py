@@ -32,14 +32,14 @@ def build_event(
     if not valid_waste:
         # If only Non Recyclable objects are present, we can still accept them
         valid_waste = waste_detections
-        
+
     # 2. Need at least one waste object
-    if not waste_detections:
+    if not valid_waste:
         return None
 
     # Take the first known person and the highest-confidence waste
     user_name = known_faces[0]
-    best_waste = max(waste_detections, key=lambda x: x["confidence"])
+    best_waste = max(valid_waste, key=lambda x: x["confidence"])
 
     # Build the event (ready for MQTT)
     event = {
@@ -62,6 +62,7 @@ def _calculate_points(waste_type: str) -> int:
         "Plastique": 10,
         "Métal": 15,
         "Papier / Carton": 8,
+        "Verre": 12,
         "Non Recyclable": 0
     }
     return points_table.get(waste_type, 0)
